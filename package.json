@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --history-api-fallback --port=5000 ",
-    "serve": "nodemon --exec ts-node app-server/index.tsx",
+    "serve": "nodemon --exec ts-node app-server/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf public/ && webpack"
   },
@@ -31,6 +31,7 @@
     "react-dom": "16.2.0",
     "react-router": "4.2.0",
     "react-router-dom": "4.2.2",
+    "rendertron-middleware": "0.1.2",
     "tslib": "1.8.1",
     "webpack-dev-server": "2.9.7"
   }
