@@ -33,21 +33,49 @@ interface IItem {
   time: string;
 }
 
+const listStyles = {
+  margin: '0 auto',
+  padding: 0,
+  maxWidth: '72em',
+};
+
+const listItemStyles = {
+  padding: '1rem',
+  margin: '0.5rem auto',
+  background: '#fff',
+  width: '100%',
+  borderRadius: '4px',
+  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
+  listStyle: 'none',
+};
+
+const listItemTitleStyles = {
+  color: 'rgba(0,0,0,0.7)',
+};
+
+const layoutStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  marginTop: '1rem',
+  color: 'rgba(0, 0, 0, 0.7)',
+} as any;
+
 export class Home extends Component<any, any> {
   render() {
     return (
-      <div>
-        <h1>DemoPage</h1>
-        <ul>
-          {dataSource.map((item: IItem, idx: number) => (
-            <li key={idx}>
-              <span>{item.title}</span>
-              <span>{item.status}</span>
+      <ul style={listStyles}>
+        {dataSource.map((item: IItem, idx: number) => (
+          <li key={idx} style={listItemStyles}>
+            <div style={listItemTitleStyles}>
+              <b>{item.title}</b>
+            </div>
+            <div style={layoutStyles}>
               <span>{item.time}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+              <span>{item.status}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
     );
   }
 }
